@@ -37,7 +37,7 @@ Chaque fonctionnalité a été réalisée par un membre de l’équipe.
 ```
 
 
-### CleanScreen
+### Système CleanScreen
 ```c
 
 /*
