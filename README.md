@@ -233,9 +233,8 @@ Nombre de termes : 5
 
 - ***ABDALLAH_AM*** : Calculatrice
 
-- ***Boureima_Issa_Adamou_Razak*** : Suite de Fibonacci
+- ***Boureima_Issa_Adamou_R*** : Suite de Fibonacci
 
 - ***LAOULI_MH*** : Test de nombre premier
 
 - ***TOGUYENI_E*** : Calcul de factoriel
-
