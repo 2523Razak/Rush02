@@ -35,6 +35,22 @@ Chaque fonctionnalité a été réalisée par un membre de l’équipe.
 #define MAGENTA "\033[1;35m" // Titres
 #define RESET "\033[0m"      // Reset
 ```
+### CleanScreen
+```c
+
+/*
+ * Efface l'écran du terminal
+ * Fonction multi-plateforme (Windows/Linux/Mac)
+ */
+void clearScreen() {
+    #ifdef _WIN32
+        system("cls");  // Commande Windows
+    #else
+        system("clear"); // Commande Unix
+    #endif
+}
+```
+
 ### Fonction 1 – Calculatrice
 
 Cette fonction permet d’effectuer des opérations simples entre deux nombres : **+, -, *, /**.
