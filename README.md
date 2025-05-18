@@ -123,18 +123,6 @@ bool estPremier(int n) {
 }
 
 ```
-```C
-void testPremier() {
-    int n;
-    printf("Entrez un entier : ");
-    scanf("%d", &n);
-
-    if (estPremier(n))
-        printf("%d est un nombre premier.\n", n);
-    else
-        printf("%d n’est pas un nombre premier.\n", n);
-}
-```
 - Un nombre premier ne peut être divisé que par 1 et lui-même.
   
 -  On optimise la boucle en s’arrêtant à la racine carrée du nombre (sqrt(n)), ce qui évite les calculs inutiles.
