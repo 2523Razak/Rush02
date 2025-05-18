@@ -23,6 +23,7 @@ Chaque fonctionnalité a été réalisée par un membre de l’équipe.
 Cette fonction permet d’effectuer des opérations simples entre deux nombres : **+, -, *, /**.
 
 ### Code 
+```C
 void calculatrice() {
     double a, b;
     char op;
@@ -50,7 +51,7 @@ void calculatrice() {
             printf("Opérateur invalide.\n"); // Si l’utilisateur entre un caractère inconnu
     }
 }
-
+```
 - On demande à l’utilisateur d’entrer une opération.
   
 - Ensuite, on utilise un switch pour détecter l’opérateur.
@@ -63,7 +64,7 @@ void calculatrice() {
 Cette fonction permet de savoir si un nombre est **premier ou non** (c’est-à-dire divisible uniquement par 1 et lui-même).
 
 ### Code :
-
+```C
 bool estPremier(int n) {
     if (n < 2) return false; // Tous les nombres < 2 ne sont pas premiers
 
@@ -73,7 +74,8 @@ bool estPremier(int n) {
     }
     return true; // Aucun diviseur trouvé, donc c’est un nombre premier
 }
-
+```
+```C
 void testPremier() {
     int n;
     printf("Entrez un entier : ");
@@ -84,7 +86,7 @@ void testPremier() {
     else
         printf("%d n’est pas un nombre premier.\n", n);
 }
-
+```
 - Un nombre premier ne peut être divisé que par 1 et lui-même.
   
 -  On optimise la boucle en s’arrêtant à la racine carrée du nombre (sqrt(n)), ce qui évite les calculs inutiles.
@@ -95,7 +97,7 @@ void testPremier() {
 Cette fonction affiche les n premiers éléments de la suite de Fibonacci, une suite célèbre en mathématiques.
 
 ### Code :
-
+```C
 void fibonacci() {
     int n;
     printf("Combien de termes ? ");
@@ -112,7 +114,7 @@ void fibonacci() {
     }
     printf("\n");
 }
-
+```
 - La suite commence par 0 et 1.
   
 - Chaque terme suivant est la somme des deux précédents.
@@ -125,7 +127,7 @@ void fibonacci() {
 Cette fonction calcule la factorielle d’un entier, c’est-à-dire le produit de tous les nombres de 1 à n.
 
 ### Code :
-
+```C
 long factoriel(int n) {
     if (n < 0) return 0; // Par convention, factorielle de nombre négatif n’existe pas
 
@@ -135,7 +137,8 @@ long factoriel(int n) {
     }
     return resultat;
 }
-
+```
+```C
 void calculerFactoriel() {
     int n;
     printf("Entrez un entier : ");
@@ -144,7 +147,7 @@ void calculerFactoriel() {
     unsigned long long f = factoriel(n);
     printf("Factoriel de %d est : %llu\n", n, f);
 }
-
+```
 - Utilisation d’un type unsigned long long pour pouvoir stocker de grands résultats.
   
 - Le calcul se fait par une boucle simple.
@@ -154,7 +157,7 @@ void calculerFactoriel() {
 Permet de naviguer entre les différentes fonctionnalités du programme.
 
 ### Code :
-
+```C
 void afficherMenu() {
     int choix;
 
@@ -179,7 +182,18 @@ void afficherMenu() {
 
     } while (choix != 5);
 }
+```
 
+## Installation & Exécution
+
+**1. Rendez-le exécutable** :
+   ```c
+   clang Rush02.c -o Rush02
+   ```
+**2. Lancez le jeu** :
+   ```c
+   ./Rush02
+   ```
 
 # Organisation de l’équipe
 
@@ -191,19 +205,3 @@ void afficherMenu() {
 
 - ***TOGUYENI_E*** : Calcul de factoriel
 
-
-Compilation et exécution
-
-Prérequis :
-
-- Un compilateur C (ex: gcc)
-
-- Terminal (Linux/Mac) ou CMD/PowerShell (Windows)
-
-Étapes à suivre :
-
-# Compiler
-clang Rush02.c -o Rush02
-
-# Exécuter
-./Rush02
