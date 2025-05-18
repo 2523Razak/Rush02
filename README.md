@@ -176,29 +176,25 @@ Permet de naviguer entre les différentes fonctionnalités du programme.
 ### Code :
 ```C
 void afficherMenu() {
-    int choix;
-
+    int choix; // Stocke le choix de l'utilisateur
+    
     do {
-        printf("\n--- MENU ---\n");
-        printf("1. Calculatrice\n");
-        printf("2. Test de nombre premier\n");
-        printf("3. Suite de Fibonacci\n");
-        printf("4. Factoriel\n");
-        printf("5. Quitter\n");
-        printf("Choix : ");
-        scanf("%d", &choix);
-
-        switch (choix) {
-            case 1: calculatrice(); break;
-            case 2: testPremier(); break;
-            case 3: fibonacci(); break;
-            case 4: calculerFactoriel(); break;
-            case 5: printf("Fermeture du programme...\n"); break;
-            default: printf("Choix invalide.\n");
-        }
-
-    } while (choix != 5);
-}
+        clearScreen(); // Nettoie l'écran avant d'afficher
+        
+        // Affichage du menu compact
+        printf(BLEU "\n");
+        printf("  ||================================||\n");
+        printf("  ||          " VERT "RUSH 4 - C" BLEU "            ||\n");
+        printf("  ||--------------------------------||\n");
+        printf("  || " VERT "1." BLEU " Calculatrice                ||\n");
+        printf("  || " VERT "2." BLEU " Nombres premiers            ||\n");
+        printf("  || " VERT "3." BLEU " Suite Fibonacci             ||\n");
+        printf("  || " VERT "4." BLEU " Factoriel                   ||\n");
+        printf("  || " ROUGE "5." BLEU " Quitter                     ||\n");
+        printf("  ||================================||\n" RESET);
+        
+        printf(BLEU "\n  Choix (1-5) : " RESET);
+        
 ```
 
 ## Installation & Exécution
