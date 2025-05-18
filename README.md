@@ -160,7 +160,7 @@ long factoriel(int n) {
     return resultat;
 }
 ```
-- Utilisation d’un type unsigned long long pour pouvoir stocker de grands résultats.
+- Utilisation d’un type long pour pouvoir stocker de grands résultats.
   
 - Le calcul se fait par une boucle simple.
 
