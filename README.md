@@ -35,6 +35,8 @@ Chaque fonctionnalité a été réalisée par un membre de l’équipe.
 #define MAGENTA "\033[1;35m" // Titres
 #define RESET "\033[0m"      // Reset
 ```
+
+
 ### CleanScreen
 ```c
 
@@ -57,6 +59,7 @@ Cette fonction sert à nettoyer l'écran du terminal. Elle fonctionne sur Window
 
 2. **Sur Mac/Linux** :
    - La fonction utilise à la place la commande `clear`
+
 
 ### Fonction 1 – Calculatrice
 
