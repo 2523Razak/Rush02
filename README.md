@@ -18,6 +18,15 @@ Ce projet est une application console interactive codée en  **langage C**, qui 
 
 Chaque fonctionnalité a été réalisée par un membre de l’équipe.
 
+### Système de Couleurs ANSI
+```c
+#define ROUGE "\033[1;31m"  // Erreurs
+#define VERT "\033[1;32m"    // Succès
+#define JAUNE "\033[1;33m"   // Pause 
+#define BLEU "\033[1;34m"    // Interface
+#define MAGENTA "\033[1;35m" // Titres
+#define RESET "\033[0m"      // Reset
+```
 ### Fonction 1 – Calculatrice
 
 Cette fonction permet d’effectuer des opérations simples entre deux nombres : **+, -, *, /**.
@@ -194,7 +203,20 @@ void afficherMenu() {
    ```c
    ./Rush02
    ```
+## Exemple d'Exécution
+```C
+||======== MENU ========||
+|| 1. Calculatrice      ||
+|| 2. Nombres premiers  ||
+|| 3. Fibonacci         ||
+|| 4. Factoriel         ||
+|| 5. Quitter           ||
+||======================||
 
+Choix : 3
+Nombre de termes : 5
+0 1 1 2 3 
+```
 # Organisation de l’équipe
 
 - ***ABDALLAH_AM*** : Calculatrice
