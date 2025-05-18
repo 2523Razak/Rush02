@@ -103,15 +103,25 @@ Cette fonction permet de savoir si un nombre est **premier ou non** (c’est-à-
 
 ### Code :
 ```C
-bool estPremier(int n) {
-    if (n < 2) return false; // Tous les nombres < 2 ne sont pas premiers
 
-    for (int i = 2; i <= sqrt(n); i++) {
-        if (n % i == 0)
-            return false; // Si on trouve un diviseur, ce n’est pas premier
+/*
+ * Vérifie si un nombre est premier
+ * @param n Le nombre à tester
+ * @return true si premier, false sinon
+ */
+bool estPremier(int n) {
+    if(n <= 1) return false;  // 0 et 1 non premiers
+    if(n == 2) return true;   // 2 est premier
+    if(n % 2 == 0) return false; // Pas de pairs > 2
+    
+    // On teste jusqu'à la racine carrée pour optimiser
+    int racine = sqrt(n);
+    for(int i = 3; i <= racine; i += 2) {
+        if(n % i == 0) return false;
     }
-    return true; // Aucun diviseur trouvé, donc c’est un nombre premier
+    return true;
 }
+
 ```
 ```C
 void testPremier() {
