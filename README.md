@@ -50,6 +50,13 @@ void clearScreen() {
     #endif
 }
 ```
+Cette fonction sert à nettoyer l'écran du terminal. Elle fonctionne sur Windows, Mac et Linux.
+
+1. **Sur Windows** :
+   - La fonction utilise la commande `cls`
+
+2. **Sur Mac/Linux** :
+   - La fonction utilise à la place la commande `clear`
 
 ### Fonction 1 – Calculatrice
 
