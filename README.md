@@ -1,5 +1,13 @@
-# Projet RUSH02 – Application mathématique en langage C
-## Rush 4
+# RUSH02-CodeCalc C (Projet Piscine Codeloccol)
+
+- **Type** : Application Console en C  
+
+- **Contexte** : Projet hebdomadaire de la Piscine Codeloccol (Semaine 2)  
+
+- **Langage** : C
+
+- **Bibliothèques** : `<stdio.h>`, `<stdbool.h>`, `<math.h>`, `<stdlib.h>`
+
 # Présentation du projet 
 Ce projet est une application console interactive codée en  **langage C**, qui propose plusieurs fonctionnalités mathématiques. Il a été réalisé dans le cadre de la Rush de validation à la piscine C de Codeloccol.
 
@@ -214,8 +222,12 @@ void afficherMenu() {
 ||======================||
 
 Choix : 3
+
+||===SUITE FIBONACCI===||
+
 Nombre de termes : 5
-0 1 1 2 3 
+
+|| Suite : 0 1 1 2 3 ||
 ```
 # Organisation de l’équipe
 
