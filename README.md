@@ -175,6 +175,8 @@ Permet de naviguer entre les différentes fonctionnalités du programme.
 
 ### Code :
 ```C
+Design compact avec bordures ||
+ */
 void afficherMenu() {
     int choix; // Stocke le choix de l'utilisateur
     
@@ -195,6 +197,69 @@ void afficherMenu() {
         
         printf(BLEU "\n  Choix (1-5) : " RESET);
         
+        // Gestion des erreurs de saisie
+        if(scanf("%d", &choix) != 1) {
+            while(getchar() != '\n'); // Vide le buffer si erreur
+            choix = 0; // Force à redemander
+        }
+        
+        clearScreen(); // Nettoie avant d'afficher le résultat
+        
+        // Gestion des choix utilisateur
+        switch(choix) {
+            case 1:
+                calculatrice(); // Lance la calculatrice
+                pause();
+                break;
+                
+            case 2: {
+                // Test de nombre premier
+                int nombre;
+                printf(MAGENTA "\n  ||=== TEST NOMBRE PREMIER ===||\n\n" RESET);
+                printf("  Entrez un nombre : ");
+                scanf("%d", &nombre);
+                printf("\n  || Resultat : %d %s %spremier" RESET " ||\n", 
+                      nombre, 
+                      estPremier(nombre) ? "est" : "n'est pas",
+                      estPremier(nombre) ? VERT : ROUGE);
+                pause();
+                break;
+            }
+                
+            case 3:
+                fibonacci(); // Génère Fibonacci
+                pause();
+                break;
+                
+            case 4: {
+                // Calcul du factoriel
+                int nombre;
+                printf(MAGENTA "\n  ||=== CALCUL FACTORIEL ===||\n\n" RESET);
+                printf("  Entrez un nombre : ");
+                scanf("%d", &nombre);
+                if(nombre < 0) {
+                    printf(ROUGE "\n  || Erreur : Impossible pour negatifs! ||\n" RESET);
+                } else {
+                    printf(VERT "\n  || %d! = %-19ld ||\n" RESET, nombre, factoriel(nombre));
+                }
+                pause();
+                break;
+            }
+                
+            case 5:
+                // Quitter le programme
+                printf(JAUNE "\n|| Merci d'avoir utilise RUSH 4 - C!||\n");
+                printf("  \nA BIENTÔT \n\n" RESET);
+                break;
+                
+            default:
+                // Gestion des choix invalides
+                printf(ROUGE "\n  || Choix invalide! (1-5 seulement) ||\n" RESET);
+                pause();
+        }
+        
+    } while(choix != 5); // Continue jusqu'à sélection de Quitter
+}
 ```
 
 ## Installation & Exécution
