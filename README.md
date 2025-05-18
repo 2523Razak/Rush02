@@ -41,32 +41,53 @@ Cette fonction permet d’effectuer des opérations simples entre deux nombres :
 
 ### Code 
 ```C
+
+/*
+ * Fonction calculatrice complète
+ * Gère +, -, *, / avec vérification des erreurs
+ */
 void calculatrice() {
-    double a, b;
-    char op;
+    int nombre1, nombre2;
+    char operation;
 
-    printf("Entrez une opération (exemple : 5 + 2) : ");
-    scanf("%lf %c %lf", &a, &op, &b); // Lecture de l’expression
+    printf(MAGENTA "\n  ||=== CALCULATRICE ===||\n\n" RESET);
+    printf("  Premier nombre : ");
+    scanf("%d", &nombre1);
+    printf("  Deuxieme nombre : ");
+    scanf("%d", &nombre2);
+    printf("  Operation (+, -, *, /) : ");
+    scanf(" %c", &operation);
 
-    switch(op) {
+    printf(JAUNE "\n  ==========================\n" RESET);
+    printf(BLEU "  Resultat : " RESET);
+    
+    // Exécution de l'opération demandée
+    switch(operation) {
         case '+':
-            printf("Résultat : %.2lf\n", a + b);
+            printf(VERT "%d + %d = %-8d" RESET "\n", nombre1, nombre2, nombre1 + nombre2);
             break;
+            
         case '-':
-            printf("Résultat : %.2lf\n", a - b);
+            printf(VERT "%d - %d = %-8d" RESET "\n", nombre1, nombre2, nombre1 - nombre2);
             break;
+            
         case '*':
-            printf("Résultat : %.2lf\n", a * b);
+            printf(VERT "%d * %d = %-8d" RESET "\n", nombre1, nombre2, nombre1 * nombre2);
             break;
+            
         case '/':
-            if (b != 0)
-                printf("Résultat : %.2lf\n", a / b); // Division normale
-            else
-                printf("Erreur : Division par zéro !\n"); // Erreur gérée
+            // Vérification division par zéro
+            if(nombre2 != 0) {
+                printf(VERT "%d / %d = %-8.2f" RESET "\n", nombre1, nombre2, (float)nombre1 / nombre2);
+            } else {
+                printf(ROUGE "Erreur: Division par 0!" RESET "\n");
+            }
             break;
+            
         default:
-            printf("Opérateur invalide.\n"); // Si l’utilisateur entre un caractère inconnu
+            printf(ROUGE "Operation inconnue!    " RESET "\n");
     }
+    printf(JAUNE "  ==========================\n" RESET);
 }
 ```
 - On demande à l’utilisateur d’entrer une opération.
