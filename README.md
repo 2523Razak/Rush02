@@ -145,24 +145,19 @@ Cette fonction calcule la factorielle d’un entier, c’est-à-dire le produit 
 
 ### Code :
 ```C
-long factoriel(int n) {
-    if (n < 0) return 0; // Par convention, factorielle de nombre négatif n’existe pas
 
-    unsigned long long resultat = 1;
-    for (int i = 1; i <= n; i++) {
-        resultat *= i; // On multiplie les nombres de 1 jusqu’à n
+/*
+ * Calcule le factoriel d'un nombre
+ * @param n Le nombre dont on veut le factoriel
+ * @return n! (factoriel de n)
+ */
+long factoriel(int n) {
+    if(n == 0) return 1; // Par définition
+    long resultat = 1;
+    for(int i = 1; i <= n; i++) {
+        resultat *= i;
     }
     return resultat;
-}
-```
-```C
-void calculerFactoriel() {
-    int n;
-    printf("Entrez un entier : ");
-    scanf("%d", &n);
-
-    unsigned long long f = factoriel(n);
-    printf("Factoriel de %d est : %llu\n", n, f);
 }
 ```
 - Utilisation d’un type unsigned long long pour pouvoir stocker de grands résultats.
