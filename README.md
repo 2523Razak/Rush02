@@ -146,22 +146,36 @@ Cette fonction affiche les n premiers éléments de la suite de Fibonacci, une s
 
 ### Code :
 ```C
+
+
+/*
+ * Génère la suite de Fibonacci
+ * Affiche les termes demandés
+ */
 void fibonacci() {
-    int n;
-    printf("Combien de termes ? ");
-    scanf("%d", &n);
+    int nbTermes, terme1 = 0, terme2 = 1, termeSuivant;
 
-    int a = 0, b = 1;
-    printf("Suite : ");
+    printf(MAGENTA "\n  ||=== SUITE FIBONACCI ===||\n\n" RESET);
+    printf("  Nombre de termes : ");
+    scanf("%d", &nbTermes);
 
-    for (int i = 0; i < n; i++) {
-        printf("%d ", a);      // Affiche le terme courant
-        int temp = a + b;      // Calcule le prochain terme
-        a = b;                 // Décalage : b devient a
-        b = temp;              // Le terme suivant devient b
+    if(nbTermes <= 0) {
+        printf(ROUGE "\n  || Erreur : Entrez un nombre > 0 ||\n" RESET);
+        return;
     }
-    printf("\n");
+
+    printf(VERT "\n  || Suite : ");
+    
+    // Génération des termes
+    for(int i = 1; i <= nbTermes; i++) {
+        printf("%d ", terme1);
+        termeSuivant = terme1 + terme2;
+        terme1 = terme2;
+        terme2 = termeSuivant;
+    }
+    printf(VERT " ||\n");
 }
+
 ```
 - La suite commence par 0 et 1.
   
